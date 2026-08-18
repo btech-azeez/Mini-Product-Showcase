@@ -112,9 +112,9 @@ The catalog is a typed local data file in `data/products.ts`. Replacing it with 
 ```bash
 git init
 git add .
-git commit -m "feat: complete lumora product showcase"
+git commit -m "complete lumora product showcase"
 git branch -M main
-git remote add origin <YOUR_GITHUB_REPOSITORY_URL>
+git remote add origin https://github.com/btech-azeez/Mini-Product-Showcase
 git push -u origin main
 ```
 
