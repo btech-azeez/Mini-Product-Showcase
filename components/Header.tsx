@@ -29,13 +29,25 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur">
       <div className="container-shell flex h-18 items-center justify-between gap-6">
-        <Link href="/" className="text-2xl font-black tracking-tight text-slate-950">
-          Lumora<span className="text-violet-600">.</span>
+        <Link href="/" className="flex items-center gap-2.5 text-2xl font-black tracking-tight text-slate-950 group">
+          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-950 text-white shadow-md shadow-slate-950/20 transition group-hover:bg-violet-600">
+            <svg className="h-5 w-5 text-violet-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polygon points="12 2 2 7 12 12 22 7 12 2" />
+              <polyline points="2 17 12 22 22 17" />
+              <polyline points="2 12 12 22 17 12" />
+            </svg>
+          </div>
+          <span>Lumora<span className="text-violet-600">.</span></span>
         </Link>
 
         {/* Desktop Navigation */}
         <nav aria-label="Primary navigation" className="hidden items-center gap-7 md:flex">
-          <Link className="nav-link" href="/">Home</Link>
+          <Link className="nav-link flex items-center gap-1.5" href="/">
+            <svg className="h-4 w-4 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+            Home
+          </Link>
           <Link className="nav-link" href="/products">Products</Link>
           <Link className="nav-link" href="/about">About</Link>
           <Link className="nav-link" href="/contact">Contact</Link>
@@ -70,7 +82,12 @@ export default function Header() {
       {mobileMenuOpen && (
         <div className="border-b border-slate-200 bg-white p-5 md:hidden">
           <nav aria-label="Mobile navigation" className="flex flex-col space-y-4">
-            <Link onClick={() => setMobileMenuOpen(false)} className="text-base font-bold text-slate-800 hover:text-violet-600" href="/">Home</Link>
+            <Link onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2 text-base font-bold text-slate-800 hover:text-violet-600" href="/">
+              <svg className="h-4 w-4 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
+              Home
+            </Link>
             <Link onClick={() => setMobileMenuOpen(false)} className="text-base font-bold text-slate-800 hover:text-violet-600" href="/products">Products</Link>
             <Link onClick={() => setMobileMenuOpen(false)} className="text-base font-bold text-slate-800 hover:text-violet-600" href="/about">About</Link>
             <Link onClick={() => setMobileMenuOpen(false)} className="text-base font-bold text-slate-800 hover:text-violet-600" href="/contact">Contact</Link>
